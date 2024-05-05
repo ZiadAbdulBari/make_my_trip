@@ -1,3 +1,4 @@
+import Modal from '../uiKits/Modal';
 import HeaderList from './HeaderList';
 
 const Header = () => {
@@ -38,7 +39,8 @@ const Header = () => {
 						<div className=" ">
 							<div></div>
 							<p className="text-[10px] font-[700] text-white w-[155px]">
-								Login or Create Account
+								{/* Login or Create Account */}
+								<Modal button="Login or Create Account" />
 							</p>
 						</div>
 						<div>

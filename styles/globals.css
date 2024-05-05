@@ -5,3 +5,9 @@
 body {
 	font-family: 'lato';
 }
+.DialogContent {
+	max-width: 850px;
+	background: rgb(253, 253, 253);
+	padding: 30px;
+	border-radius: 4px;
+}

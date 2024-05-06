@@ -4,7 +4,7 @@ import HeaderList from './HeaderList';
 const Header = () => {
 	return (
 		<div className="w-full h-[78px] absolute top-0 left-0 z-[99]">
-			<div className="w-[1200px] mx-auto pt-[5px] flex justify-between">
+			<div className="custom-container pt-[5px] flex justify-between">
 				<div>
 					<img src="../../mmtLogo.png" alt="brand logo" className="w-[113px]" />
 				</div>
@@ -42,6 +42,27 @@ const Header = () => {
 								{/* Login or Create Account */}
 								<Modal button="Login or Create Account" />
 							</p>
+						</div>
+						<div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								// fill="currentColor"
+								className="bi bi-chevron-down fill-white"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fillRule="evenodd"
+									d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+								/>
+							</svg>
+						</div>
+					</div>
+					<div className="flex justify-between items-center bg-[#797A75] px-[10px] py-[10px] rounded gap-2">
+						<div className=" ">
+							<div></div>
+							<p className="text-[10px] font-[700] text-white">IN | ENG | INR</p>
 						</div>
 						<div>
 							<svg

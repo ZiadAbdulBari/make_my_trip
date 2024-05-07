@@ -52,7 +52,7 @@ const Navbar = () => {
 		},
 	];
 	return (
-		<div className="absolute top-[78px] w-[928px] h-[100px] left-[50%] -translate-x-[50%] bg-white rounded-[8px] px-[30px] py-[8px] shadow-md z-[999]">
+		<div className="absolute top-[78px] w-[928px] h-[100px] left-[50%] -translate-x-[50%] bg-white rounded-[8px] px-[30px] py-[8px] shadow-md z-[9]">
 			<div className="grid grid-flow-row grid-cols-9">
 				<div>
 					<Image

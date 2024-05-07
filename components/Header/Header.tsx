@@ -3,7 +3,7 @@ import HeaderList from './HeaderList';
 
 const Header = () => {
 	return (
-		<div className="w-full h-[78px] absolute top-0 left-0 z-[99]">
+		<div className="w-full h-[78px] absolute top-0 left-0 z-[9999999]">
 			<div className="custom-container pt-[5px] flex justify-between">
 				<div>
 					<img src="../../mmtLogo.png" alt="brand logo" className="w-[113px]" />

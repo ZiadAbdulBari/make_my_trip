@@ -10,7 +10,7 @@ const SearchTrip = () => {
 	};
 	return (
 		<>
-			<div className="custom-container h-[333px] absolute top-[120px] left-[50%] -translate-x-[50%] bg-white z-[99] rounded-[8px]">
+			<div className="custom-container h-[333px] absolute top-[120px] left-[50%] -translate-x-[50%] bg-white z-[0] rounded-[8px]">
 				<div className="pt-[70px] px-[20px]">
 					<div className="flex justify-between">
 						<div className="flex gap-[26px] text-[14px]">
@@ -207,7 +207,7 @@ const SearchTrip = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center z-[999]">
+			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center z-[3]">
 				<button>SEARCH</button>
 			</div>
 		</>

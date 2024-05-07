@@ -1,3 +1,4 @@
+import Appinfo from '@/components/Appinfo/Appinfo';
 import Banner from '@/components/Banner/Banner';
 import General from '@/components/Cards/General';
 import Offer from '@/components/Cards/Offer';
@@ -179,6 +180,7 @@ export default function Home() {
 						))}
 					</OfferSlider>
 				</Sections>
+				<Appinfo />
 				<Sections
 					heading="Handpicked Collections for You"
 					isHandPickCollection={true}

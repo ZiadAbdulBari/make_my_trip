@@ -9,7 +9,14 @@
 	padding-left: 5px !important;
 	padding-right: 5px !important;
 }
-
+.collection .swiper-button-prev,
+.collection .swiper-button-next {
+	top: -60px !important;
+}
+.general .swiper-button-prev,
+.general .swiper-button-next {
+	top: -40px !important;
+}
 .swiper-button-prev,
 .swiper-button-next {
 	position: absolute;

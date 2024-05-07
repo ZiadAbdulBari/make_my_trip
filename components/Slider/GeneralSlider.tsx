@@ -4,7 +4,13 @@ import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/grid';
-const GeneralSlider = ({ children }: { children: React.ReactNode }) => {
+const GeneralSlider = ({
+	children,
+	isHandPickCollection,
+}: {
+	children: React.ReactNode;
+	isHandPickCollection: boolean;
+}) => {
 	return (
 		<Swiper
 			slidesPerView={5}
@@ -12,6 +18,7 @@ const GeneralSlider = ({ children }: { children: React.ReactNode }) => {
 			grabCursor={true}
 			navigation
 			modules={[Navigation]}
+			className={isHandPickCollection ? 'collection' : 'general'}
 		>
 			{children}
 		</Swiper>

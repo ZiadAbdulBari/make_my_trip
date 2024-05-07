@@ -186,7 +186,7 @@ export default function Home() {
 					isTab={false}
 					isViewAll={false}
 				>
-					<GeneralSlider>
+					<GeneralSlider isHandPickCollection={true}>
 						{handpickCollections.map((collection, index) => (
 							<SwiperSlide key={index}>
 								<General
@@ -206,7 +206,7 @@ export default function Home() {
 					isTab={false}
 					isViewAll={false}
 				>
-					<GeneralSlider>
+					<GeneralSlider isHandPickCollection={false}>
 						{wonders.map((wonder, index) => (
 							<SwiperSlide key={index}>
 								<General

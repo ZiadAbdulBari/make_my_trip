@@ -1,4 +1,3 @@
-/* offer slider CSS */
 .swiper {
 	width: 100%;
 	height: 100%;
@@ -64,39 +63,5 @@
 	background-color: white;
 	box-shadow: -1px 0px 3px 0 rgba(0, 0, 0, 0.1);
 	/* width: 40px !important; */
-	border: 1px solid #f2eaea;
-}
-/* news slider */
-
-.news-slider .swiper-button-prev,
-.news-slider .swiper-rtl .swiper-button-next {
-	left: var(--swiper-navigation-sides-offset, -10px) !important;
-	right: auto;
-}
-.news-slider .swiper-button-prev,
-.news-slider .swiper-button-next {
-	top: 50% !important;
-}
-.news-slider .swiper-button-next,
-.news-slider .swiper-rtl .swiper-button-prev {
-	right: var(--swiper-navigation-sides-offset, -10px);
-	left: auto;
-}
-.news-slider .swiper-button-next {
-	background-color: #ffffff;
-	border-radius: 100%;
-	height: 40px;
-	width: 40px;
-	background-color: white;
-	box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.1);
-	border: 1px solid #f2eaea;
-}
-.news-slider .swiper-button-prev {
-	background-color: #ffffff;
-	border-radius: 100%;
-	height: 40px;
-	width: 40px;
-	background-color: white;
-	box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
 	border: 1px solid #f2eaea;
 }

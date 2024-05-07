@@ -1,9 +1,11 @@
 import Appinfo from '@/components/Appinfo/Appinfo';
 import Banner from '@/components/Banner/Banner';
 import General from '@/components/Cards/General';
+import News from '@/components/Cards/News';
 import Offer from '@/components/Cards/Offer';
 import Sections from '@/components/Sections/Sections';
 import GeneralSlider from '@/components/Slider/GeneralSlider';
+import NewsSlider from '@/components/Slider/NewsSlider';
 import OfferSlider from '@/components/Slider/OfferSlider';
 import Services from '@/components/services/Services';
 import Layouts from '@/layouts/layout';
@@ -154,6 +156,28 @@ export default function Home() {
 			badgeText: 'TOP 9',
 		},
 	];
+	const news = [
+		{
+			imagesUrl: './news-1.png',
+			description:
+				'Check out our Indian Travel Trends Report. Our trends report 2023-24 is out now. Read on for top travel insights.',
+		},
+		{
+			imagesUrl: './news-2.png',
+			description:
+				'Check out our Indian Travel Trends Report. Our trends report 2023-24 is out now. Read on for top travel insights.',
+		},
+		{
+			imagesUrl: './news-3.png',
+			description:
+				'Check out our Indian Travel Trends Report. Our trends report 2023-24 is out now. Read on for top travel insights.',
+		},
+		{
+			imagesUrl: './news-4.png',
+			description:
+				'Check out our Indian Travel Trends Report. Our trends report 2023-24 is out now. Read on for top travel insights.',
+		},
+	];
 	return (
 		<main>
 			<Layouts>
@@ -180,6 +204,21 @@ export default function Home() {
 						))}
 					</OfferSlider>
 				</Sections>
+				<div className="custom-container h-[104px] overflow-hidden">
+					<NewsSlider>
+						{news.map((data, index) => (
+							<SwiperSlide key={index}>
+								<News imageUrl={data.imagesUrl} description={data.description} />
+							</SwiperSlide>
+						))}
+					</NewsSlider>
+				</div>
+				<div className="w-[968px] mx-auto my-[20px] rounded-[16px] overflow-hidden relative border border-[#d8d8d8]">
+					<div className="absolute top-[5px] right-[5px] text-[10px] bg-white rounded-full border border-[#d8d8d8] px-[5px]">
+						Sponsored
+					</div>
+					<img src="../sponser.jpeg" alt="" className="w-full" />
+				</div>
 				<Appinfo />
 				<Sections
 					heading="Handpicked Collections for You"

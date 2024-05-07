@@ -15,6 +15,7 @@ const OfferSlider = ({ children }: { children: React.ReactNode }) => {
 			grabCursor={false}
 			navigation
 			modules={[Grid, Navigation]}
+			className="offer"
 		>
 			{children}
 		</Swiper>

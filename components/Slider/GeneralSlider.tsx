@@ -15,7 +15,6 @@ const GeneralSlider = ({
 		<Swiper
 			slidesPerView={5}
 			spaceBetween={20}
-			grabCursor={true}
 			navigation
 			modules={[Navigation]}
 			className={isHandPickCollection ? 'collection' : 'general'}

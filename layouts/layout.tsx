@@ -6,7 +6,7 @@ const Layouts = ({ children }: { children: React.ReactNode }) => {
 		<>
 			<Header />
 			{children}
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 };

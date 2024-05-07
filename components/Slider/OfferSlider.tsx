@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/grid';
-import Offer from '../Cards/Offer';
 const OfferSlider = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<Swiper
@@ -13,7 +12,7 @@ const OfferSlider = ({ children }: { children: React.ReactNode }) => {
 				rows: 2,
 			}}
 			spaceBetween={20}
-			grabCursor={true}
+			grabCursor={false}
 			navigation
 			modules={[Grid, Navigation]}
 		>

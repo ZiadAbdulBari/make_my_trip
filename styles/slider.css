@@ -14,8 +14,8 @@
 .swiper-button-next {
 	position: absolute;
 	top: -40px !important;
-	width: 35px !important;
-	height: 32px !important;
+	width: 37px !important;
+	height: 40px !important;
 	margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
 	z-index: 10;
 	cursor: pointer;
@@ -26,7 +26,7 @@
 }
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
-	left: var(--swiper-navigation-sides-offset, 93%) !important;
+	left: var(--swiper-navigation-sides-offset, 92.5%) !important;
 	right: auto;
 }
 .swiper-button-next:after,

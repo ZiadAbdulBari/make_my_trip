@@ -8,6 +8,7 @@ import GeneralSlider from '@/components/Slider/GeneralSlider';
 import NewsSlider from '@/components/Slider/NewsSlider';
 import OfferSlider from '@/components/Slider/OfferSlider';
 import Services from '@/components/services/Services';
+import HeadlessCombobox from '@/components/uiKits/HeadlessCombobox';
 import Layouts from '@/layouts/layout';
 import { SwiperSlide } from 'swiper/react';
 

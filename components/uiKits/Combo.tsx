@@ -30,7 +30,7 @@ const Combo = () => {
 				<Button variant="outline" role="combobox" aria-expanded={open} className="">
 					{value
 						? frameworks.find((framework) => framework.value === value)?.label
-						: frameworks[0].value}
+						: frameworks[0].label}
 					<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 				</Button>
 			</PopoverTrigger>

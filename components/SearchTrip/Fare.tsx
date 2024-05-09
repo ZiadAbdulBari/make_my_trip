@@ -8,7 +8,8 @@ type FareProps = {
 };
 const Fare = ({ title, subtitle, onChange, selectedvalue }: FareProps) => {
 	return (
-		<div
+		<label
+			htmlFor={title.split(' ').join('-')}
 			className={`flex items-start gap-[10px] px-[12px] py-[8px] border rounded-[8px] cursor-pointer ${
 				selectedvalue == title.split(' ').join('-') &&
 				'border-[#008CFF] text-[#008CFF] bg-[#EAF5FF]'
@@ -33,7 +34,7 @@ const Fare = ({ title, subtitle, onChange, selectedvalue }: FareProps) => {
 				</label>
 				<p className="leading-0 text-[12px] cursor-pointer text-[#757575]">{subtitle}</p>
 			</div>
-		</div>
+		</label>
 	);
 };
 export default Fare;

@@ -8,7 +8,7 @@ import {
 } from '@headlessui/react';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 // import clsx from 'clsx';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 const people = [
 	{ id: +880, name: 'Bangladesh(+880)' },
@@ -17,9 +17,9 @@ const people = [
 	{ id: +213, name: 'Algeria(+213)' },
 	{ id: +54, name: 'Argentina(+54)' },
 ];
-const HeadlessCombobox = () => {
+const TripCombobox = () => {
 	const [query, setQuery] = useState('');
-	const [selected, setSelected] = useState(people[0]);
+	const [selected, setSelected] = useState();
 	const filteredPeople =
 		query === ''
 			? people
@@ -29,14 +29,14 @@ const HeadlessCombobox = () => {
 
 	return (
 		<Combobox value={selected} onChange={(value: any) => setSelected(value)}>
-			<div className="relative w-full h-full">
+			<div className="w-full h-full">
 				<div className="flex items-center h-full w-full bg-white">
 					<ComboboxInput
-						className="h-full w-[80%] overflow-hidden outline-none"
+						className="!h-[40px] w-full overflow-hidden outline-none pl-[10px] shadow-[0_2px_3px_0_rgba(0,0,0,0.1)] rounded"
 						displayValue={(person: any) => person?.name}
 						onChange={(event) => setQuery(event.target.value)}
 					/>
-					<ComboboxButton className="absolute -right-[12px] inset-y-0 right-0 px-2.5">
+					<ComboboxButton className="right-0 absolute inset-y-0 px-2.5">
 						<ChevronDownIcon className="size-4 fill-black" />
 					</ComboboxButton>
 				</div>
@@ -47,11 +47,10 @@ const HeadlessCombobox = () => {
 				leaveTo="opacity-0"
 				afterLeave={() => setQuery('')}
 			>
-				<div className="w-[250px] max-h-[280px] overflow-y-auto relative bg-white ">
+				<div className="w-full max-h-[280px] overflow-y-auto bg-white ">
 					<ComboboxOptions
-						as="div"
 						anchor="bottom"
-						className="absolute w-[250px] max-h-[280px] bg-white  z-[99999] shadow-[0_8px_8px_0_rgba(0,0,0,0.12)] rounded-[2px] p-1"
+						className="w-[var(--input-width)]  max-h-[280px] bg-white  z-[99999] shadow-[0_8px_8px_0_rgba(0,0,0,0.12)] rounded-[2px] p-1"
 					>
 						{filteredPeople.map((person) => (
 							<ComboboxOption
@@ -69,4 +68,4 @@ const HeadlessCombobox = () => {
 		</Combobox>
 	);
 };
-export default HeadlessCombobox;
+export default TripCombobox;

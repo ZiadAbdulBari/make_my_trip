@@ -1,13 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Fare from './Fare';
+import TripCombobox from './TripCombobox';
 const SearchTrip = () => {
+	const ref = useRef(null);
 	const [trip, setTrip] = useState('one-way');
 	const [value, setValue] = useState('');
+	const [startingpoint, setStartingpoint] = useState('');
+	const [endingpoint, setEndingpoint] = useState('');
+	const [startingpoinSearch, setStartingpoinSearch] = useState(false);
 	const getFare = (e: any) => {
-		// console.log(e.target.value);
 		setValue(e.target.value);
 	};
+	useEffect(() => {
+		const handleOutSideClick = (event: any) => {
+			if (!ref.current?.contains(event.target)) {
+				setStartingpoinSearch(false);
+			}
+		};
+
+		window.addEventListener('mousedown', handleOutSideClick);
+
+		return () => {
+			window.removeEventListener('mousedown', handleOutSideClick);
+		};
+	}, [ref]);
 	return (
 		<>
 			<div className="custom-container h-[333px] absolute top-[120px] left-[50%] -translate-x-[50%] bg-white z-[0] rounded-[8px]">
@@ -77,14 +94,25 @@ const SearchTrip = () => {
 					<div className="flex w-full border border-gray-300 my-[11px] h-[112px] rounded-[8px] mb-[20px]">
 						<div className="w-[50%] h-full border-r relative">
 							<div className="flex w-full h-full divide-x">
-								<div className="w-[50%] h-full px-[19px] py-[10px]">
+								<div
+									className={`w-[50%] h-full px-[19px] py-[10px] relative cursor-pointer ${
+										startingpoinSearch && 'bg-[#EAF5FF]'
+									}`}
+									onClick={() => setStartingpoinSearch(true)}
+									ref={ref}
+								>
 									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">From</p>
 									<p className="text-[30px] font-[900] leading-[36px]">Delhi</p>
 									<p className="text-[14px] text-[#4A4A4A]">
 										DEL, Delhi Airport India
 									</p>
+									{startingpoinSearch && (
+										<div className="absolute top-[30%] left-0 w-[105%] z-[999999999]">
+											<TripCombobox />
+										</div>
+									)}
 								</div>
-								<div className="w-[50%] h-full px-[38px] py-[10px]">
+								<div className="w-[50%] h-full px-[38px] py-[10px] cursor-pointer">
 									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">To</p>
 									<p className="text-[30px] font-[900] leading-[36px]">
 										Bengaluru

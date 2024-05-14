@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 import Fare from './Fare';
 import TripCombobox from './TripCombobox';
 import Calender from '../uiKits/Calender';
+import Dropdown from '../uiKits/Dropdown';
+import SelectNumber from '../uiKits/SelectNumber';
 const SearchTrip = () => {
 	const ref = useRef(null);
 	const [trip, setTrip] = useState('one-way');
@@ -12,6 +14,7 @@ const SearchTrip = () => {
 	const [openFeature, setOpenFeature] = useState({
 		openCalender: false,
 		startingpoinSearch: false,
+		openClass: false,
 	});
 	const getFare = (e: any) => {
 		setValue(e.target.value);
@@ -22,6 +25,7 @@ const SearchTrip = () => {
 				setOpenFeature({
 					openCalender: false,
 					startingpoinSearch: false,
+					openClass: false,
 				});
 			}
 		};
@@ -107,14 +111,20 @@ const SearchTrip = () => {
 									}`}
 									onClick={() =>
 										setOpenFeature({
-											...openFeature,
+											openClass: false,
 											startingpoinSearch: true,
 											openCalender: false,
 										})
 									}
 									ref={ref}
 								>
-									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">From</p>
+									<p
+										className={`text-[14px] text-[#4A4A4A] mb-[10px] ${
+											openFeature.startingpoinSearch && 'text-[#008cff]'
+										}`}
+									>
+										From
+									</p>
 									<p className="text-[30px] font-[900] leading-[36px]">Delhi</p>
 									<p className="text-[14px] text-[#4A4A4A]">
 										DEL, Delhi Airport India
@@ -156,14 +166,18 @@ const SearchTrip = () => {
 								}`}
 								onClick={() =>
 									setOpenFeature({
-										...openFeature,
 										openCalender: true,
 										startingpoinSearch: false,
+										openClass: false,
 									})
 								}
 							>
 								<div className="flex">
-									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">
+									<p
+										className={`text-[14px] text-[#4A4A4A] mb-[10px] ${
+											openFeature.openCalender && 'text-[#008cff]'
+										}`}
+									>
 										Departure
 									</p>
 									<svg
@@ -196,9 +210,24 @@ const SearchTrip = () => {
 									</svg>
 								</div>
 							</div>
-							<div className="border-r w-[42%] h-full px-[19px] py-[10px]">
+							<div
+								className={`border-r w-[42%] h-full px-[19px] py-[10px] relative cursor-pointer ${
+									openFeature.openClass && 'bg-[#EAF5FF]'
+								}`}
+								onClick={() =>
+									setOpenFeature({
+										openCalender: false,
+										startingpoinSearch: false,
+										openClass: true,
+									})
+								}
+							>
 								<div className="flex">
-									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">
+									<p
+										className={`text-[14px] text-[#4A4A4A] mb-[10px] ${
+											openFeature.openClass && 'text-[#008cff]'
+										}`}
+									>
 										Travellers & Class
 									</p>
 									<svg
@@ -214,9 +243,37 @@ const SearchTrip = () => {
 								<p className="text-[20px] leading-[30px]">
 									<span className="font-[900] text-[30px]">1</span> Traveller
 								</p>
-								<p className="text-[14px] text-[#4A4A4A]">
+								<p className={`text-[14px] text-[#4A4A4A]`}>
 									Economy/Premium Economy
 								</p>
+								{openFeature.openClass && (
+									<Dropdown>
+										<div className="flex">
+											<SelectNumber
+												lastnumber={9}
+												heading="ADULTS (12y +)"
+												subheading="on the day of travel"
+											/>
+										</div>
+										<div className="flex gap-[10px]">
+											<SelectNumber
+												lastnumber={6}
+												heading="CHILDREN (2y - 12y )"
+												subheading="on the day of travel"
+											/>
+											<SelectNumber
+												lastnumber={6}
+												heading="INFANTS (below 2y)"
+												subheading="on the day of travel"
+											/>
+										</div>
+										<div className="flex justify-end">
+											<button className="text-white px-[20px] text-[14px] py-[5px] rounded-full bg-gradient-to-r from-blue-400  to-blue-700">
+												APPLY
+											</button>
+										</div>
+									</Dropdown>
+								)}
 							</div>
 						</div>
 					</div>
@@ -260,9 +317,9 @@ const SearchTrip = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center !z-[0]">
+			{/* <div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center !z-[0]">
 				<button>SEARCH</button>
-			</div>
+			</div> */}
 		</>
 	);
 };

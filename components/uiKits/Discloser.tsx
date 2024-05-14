@@ -20,7 +20,7 @@ export default function Discloser({
 							? 'bg-transparent'
 							: 'bg-white shadow-[0_1px_4px_0_rgba(0,0,0,0.2)]'
 					} `}
-					defaultOpen={true}
+					defaultOpen={false}
 				>
 					<DisclosureButton className="group flex w-full items-center justify-between">
 						<span className="!text-[14px] font-[900] text-black/[0.7] group-data-[hover]:text-white/80">

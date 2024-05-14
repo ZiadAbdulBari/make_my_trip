@@ -260,7 +260,7 @@ const SearchTrip = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center !z-[1]">
+			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center !z-[0]">
 				<button>SEARCH</button>
 			</div>
 		</>

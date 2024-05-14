@@ -74,7 +74,7 @@ const Header = () => {
 			<div
 				className={`page-header w-full ${
 					scrolled > 150 ? 'h-[65px]' : 'h-[78px]'
-				} absolute top-0 left-0 z-[9999999] hidden lg:block`}
+				} absolute top-0 left-0 z-[99] hidden lg:block`}
 			>
 				{scrolled < 150 && (
 					<div className="custom-container pt-[5px] flex justify-between">
@@ -109,10 +109,16 @@ const Header = () => {
 								/>
 							</div>
 							<Modal>
-								<div className="flex justify-between items-center bg-gradient-to-r from-blue-300  to-blue-700 px-[10px] py-[10px] rounded">
-									<div className=" ">
-										<div></div>
-										<p className="text-[10px] font-[700] text-white w-[155px]">
+								<div className="flex justify-between items-center bg-gradient-to-r from-blue-400  to-blue-700 px-[10px] py-[10px] rounded w-[213px]">
+									<div className="flex items-center gap-[10px]">
+										<div>
+											<img
+												src="../../login-icon.png"
+												alt=""
+												className="w-[23px]"
+											/>
+										</div>
+										<p className="text-[10px] font-[700] text-white">
 											Login or Create Account
 										</p>
 									</div>
@@ -135,9 +141,11 @@ const Header = () => {
 							</Modal>
 							<div className="flex justify-between items-center bg-[#797A75] px-[10px] py-[10px] rounded gap-2">
 								<div className=" ">
-									<div></div>
-									<p className="text-[10px] font-[700] text-white">
-										IN | ENG | INR
+									<p className="text-[10px] font-[700] text-white flex items-center gap-2">
+										<span>
+											<img src="ind.png" alt="" className="w-[15px]" />
+										</span>
+										<span>IN | ENG | INR</span>
 									</p>
 								</div>
 								<div>

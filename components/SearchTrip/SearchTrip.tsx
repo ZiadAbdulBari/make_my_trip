@@ -2,20 +2,27 @@
 import { useState, useEffect, useRef } from 'react';
 import Fare from './Fare';
 import TripCombobox from './TripCombobox';
+import Calender from '../uiKits/Calender';
 const SearchTrip = () => {
 	const ref = useRef(null);
 	const [trip, setTrip] = useState('one-way');
 	const [value, setValue] = useState('');
 	const [startingpoint, setStartingpoint] = useState('');
 	const [endingpoint, setEndingpoint] = useState('');
-	const [startingpoinSearch, setStartingpoinSearch] = useState(false);
+	const [openFeature, setOpenFeature] = useState({
+		openCalender: false,
+		startingpoinSearch: false,
+	});
 	const getFare = (e: any) => {
 		setValue(e.target.value);
 	};
 	useEffect(() => {
 		const handleOutSideClick = (event: any) => {
 			if (!ref.current?.contains(event.target)) {
-				setStartingpoinSearch(false);
+				setOpenFeature({
+					openCalender: false,
+					startingpoinSearch: false,
+				});
 			}
 		};
 
@@ -96,9 +103,15 @@ const SearchTrip = () => {
 							<div className="flex w-full h-full divide-x">
 								<div
 									className={`w-[50%] h-full px-[19px] py-[10px] relative cursor-pointer ${
-										startingpoinSearch && 'bg-[#EAF5FF]'
+										openFeature.startingpoinSearch && 'bg-[#EAF5FF]'
 									}`}
-									onClick={() => setStartingpoinSearch(true)}
+									onClick={() =>
+										setOpenFeature({
+											...openFeature,
+											startingpoinSearch: true,
+											openCalender: false,
+										})
+									}
 									ref={ref}
 								>
 									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">From</p>
@@ -106,7 +119,7 @@ const SearchTrip = () => {
 									<p className="text-[14px] text-[#4A4A4A]">
 										DEL, Delhi Airport India
 									</p>
-									{startingpoinSearch && (
+									{openFeature.startingpoinSearch && (
 										<div className="absolute top-[30%] left-0 w-[105%] z-[999999999]">
 											<TripCombobox />
 										</div>
@@ -137,7 +150,18 @@ const SearchTrip = () => {
 							</div>
 						</div>
 						<div className="w-[50%] h-full flex">
-							<div className="border-r w-[29%] h-full px-[19px] py-[10px]">
+							<div
+								className={`border-r w-[29%] h-full px-[19px] py-[10px] relative z-[8] cursor-pointer ${
+									openFeature.openCalender && 'bg-[#EAF5FF]'
+								}`}
+								onClick={() =>
+									setOpenFeature({
+										...openFeature,
+										openCalender: true,
+										startingpoinSearch: false,
+									})
+								}
+							>
 								<div className="flex">
 									<p className="text-[14px] text-[#4A4A4A] mb-[10px]">
 										Departure
@@ -156,6 +180,7 @@ const SearchTrip = () => {
 									<span className="font-[900] text-[30px]">6</span> May'24
 								</p>
 								<p className="text-[14px] text-[#4A4A4A]">Monday</p>
+								{openFeature.openCalender && <Calender />}
 							</div>
 							<div className="border-r w-[29%] h-full px-[19px] py-[10px]">
 								<div className="flex">
@@ -235,9 +260,9 @@ const SearchTrip = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center z-[3]">
+			{/* <div className="absolute top-[430px] left-[50%] -translate-x-[50%] text-[24px] font-[700] leading-[24px] text-white bg-gradient-to-r from-blue-400 to-blue-600 p-[10px] rounded-full w-[216px] text-center z-[3]">
 				<button>SEARCH</button>
-			</div>
+			</div> */}
 		</>
 	);
 };

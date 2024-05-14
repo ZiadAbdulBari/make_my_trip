@@ -21,13 +21,16 @@
 		"@radix-ui/react-tabs": "^1.0.4",
 		"class-variance-authority": "^0.7.0",
 		"cmdk": "^1.0.0",
+		"date-fns": "^3.6.0",
 		"lucide-react": "^0.378.0",
 		"next": "14.2.3",
 		"react": "^18",
+		"react-day-picker": "^8.10.1",
 		"react-dom": "^18",
 		"swiper": "^11.1.1",
 		"tailwind-merge": "^2.3.0",
-		"tailwindcss-animate": "^1.0.7"
+		"tailwindcss-animate": "^1.0.7",
+		"tailwindcss-hero-patterns": "^0.1.2"
 	},
 	"devDependencies": {
 		"@types/node": "^20",

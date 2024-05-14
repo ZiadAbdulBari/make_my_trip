@@ -5,6 +5,8 @@
 body {
 	font-family: 'lato';
 	background-color: #f2f2f2;
+	width: 100%;
+	overflow: auto;
 }
 .DialogContent {
 	max-width: 850px;
@@ -13,5 +15,34 @@ body {
 	border-radius: 4px;
 }
 .custom-container {
-	@apply w-[1200px] mx-auto;
+	@apply lg:w-[1200px] mx-auto;
+}
+.calender {
+	@apply bg-white shadow-[0_1px_6px_0_rgba(0,0,0,0.2)] absolute top-[25%] left-[50%] -translate-x-[50%] p-[14px] z-[99];
+}
+.rdp-weeknumber,
+.rdp-day,
+.rdp-day_selected {
+	border-radius: 0% !important;
+}
+.rdp-day:hover {
+	background-color: #008cff13 !important;
+}
+.rdp-day_selected {
+	background-color: #008cff !important;
+}
+.is-sticky {
+	position: fixed;
+	box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+	/* backdrop-filter: blur(10px); */
+	background-color: white;
+	animation: slideDown 0.35s ease-out;
+}
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
 }

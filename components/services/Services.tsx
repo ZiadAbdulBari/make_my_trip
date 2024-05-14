@@ -2,7 +2,7 @@ import Service from './Service';
 
 const Services = () => {
 	return (
-		<div className=" bg-white w-[1000px] rounded-full z-[9999] shadow-[0_1px_30px_0_rgba(0, 0, 0, 0.1)] mx-auto mb-[20px] mt-[5px]">
+		<div className=" bg-white w-[1000px] rounded-full z-[9999] shadow-[0_1px_30px_0_rgba(0, 0, 0, 0.1)] mx-auto mb-[20px] mt-[5px] hidden lg:block">
 			<div className="w-full px-[10px] flex divide-x">
 				<Service imageUrl="../../go.png" title="Where2Go" subtitle="" extraCSS="" />
 				<Service

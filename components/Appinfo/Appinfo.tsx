@@ -1,6 +1,6 @@
 const Appinfo = () => {
 	return (
-		<div className="custom-container mb-[20px] pt-[10px] px-[40px] pb-[40px] bg-white rounded-[10px]">
+		<div className="custom-container mb-[20px] pt-[10px] px-[40px] pb-[40px] bg-white rounded-[10px] hidden lg:block">
 			<div className="flex justify-between items-stretch">
 				<div>
 					<div className="flex gap-[20px] items-center">

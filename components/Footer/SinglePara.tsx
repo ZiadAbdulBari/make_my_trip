@@ -1,6 +1,6 @@
 const SinglePara = ({ heading, paragraph }: { heading: string; paragraph: string }) => {
 	return (
-		<div className="mb-[20px]">
+		<div className="mb-[20px] hidden lg:block">
 			<p className="text-[10px] font-[900] mb-[10px]">{heading}</p>
 			<p className="text-[12px]">{paragraph}</p>
 		</div>

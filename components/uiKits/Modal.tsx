@@ -2,13 +2,14 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import HeadlessCombobox from './HeadlessCombobox';
 import ModalSlider from '../Slider/ModalSlider';
 type ModalProps = {
-	button: string;
+	children: React.ReactNode;
 };
 import { SwiperSlide } from 'swiper/react';
-const Modal = ({ button }: ModalProps) => {
+import { Children } from 'react';
+const Modal = ({ children }: ModalProps) => {
 	return (
 		<Dialog>
-			<DialogTrigger>{button}</DialogTrigger>
+			<DialogTrigger>{children}</DialogTrigger>
 			<DialogContent className="!max-w-[45vw] !h-[62vh] p-0 bg-transparent !border-0">
 				<div className="flex items-center h-full !max-w-[45vw]">
 					<div className="!h-[95%] !w-[45%] rounded-l-[10px] overflow-hidden">

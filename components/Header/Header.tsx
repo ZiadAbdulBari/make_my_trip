@@ -108,30 +108,31 @@ const Header = () => {
 									subtitleSize="text-[10px]"
 								/>
 							</div>
-							<div className="flex justify-between items-center bg-gradient-to-r from-blue-300  to-blue-700 px-[10px] py-[10px] rounded">
-								<div className=" ">
-									<div></div>
-									<p className="text-[10px] font-[700] text-white w-[155px]">
-										{/* Login or Create Account */}
-										<Modal button="Login or Create Account" />
-									</p>
+							<Modal>
+								<div className="flex justify-between items-center bg-gradient-to-r from-blue-300  to-blue-700 px-[10px] py-[10px] rounded">
+									<div className=" ">
+										<div></div>
+										<p className="text-[10px] font-[700] text-white w-[155px]">
+											Login or Create Account
+										</p>
+									</div>
+									<div>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											// fill="currentColor"
+											className="bi bi-chevron-down fill-white"
+											viewBox="0 0 16 16"
+										>
+											<path
+												fillRule="evenodd"
+												d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+											/>
+										</svg>
+									</div>
 								</div>
-								<div>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="16"
-										height="16"
-										// fill="currentColor"
-										className="bi bi-chevron-down fill-white"
-										viewBox="0 0 16 16"
-									>
-										<path
-											fillRule="evenodd"
-											d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-										/>
-									</svg>
-								</div>
-							</div>
+							</Modal>
 							<div className="flex justify-between items-center bg-[#797A75] px-[10px] py-[10px] rounded gap-2">
 								<div className=" ">
 									<div></div>
@@ -203,14 +204,16 @@ const Header = () => {
 								))}
 							</div>
 							<div className="flex gap-[20px]">
-								<div className="flex items-center gap-[10px]">
-									<div className="flex items-center justify-center w-[25px] h-[25px] rounded-full bg-gradient-to-r from-green-300 to-green-600">
-										<img src="../../logo-icon.png" className="w-[15px] " />
+								<Modal>
+									<div className="flex items-center gap-[10px]">
+										<div className="flex items-center justify-center w-[25px] h-[25px] rounded-full bg-gradient-to-r from-green-300 to-green-600">
+											<img src="../../logo-icon.png" className="w-[15px]" />
+										</div>
+										<p className="text-start text-[12px] font-[700]">
+											<span className="block">Login or</span> Create Account
+										</p>
 									</div>
-									<p className="text-[12px] font-[700]">
-										<span className="block">Login or</span> Create Account
-									</p>
-								</div>
+								</Modal>
 								<div>
 									<p className="text-[10px] mb-[2px]">Country</p>
 								</div>
